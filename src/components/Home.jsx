@@ -3,6 +3,8 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 
 const Home = () => {
@@ -62,7 +64,7 @@ const Home = () => {
     <div style={{margin:"auto", display:"flex", flexDirection:"column", gap:"20px", alignItems:"center", justifyContent:"center"}}>
 
     <h1 align="center" style={{marginTop: "20px"}}>Bills DashBoard</h1>
-    <Button variant="primary" align="center" style={{margin:"auto", align:"center", display:"inline-block"}}>Add a Bill</Button>{' '}
+    <div style={{display:"flex", gap:"20px"}}><Button variant="primary" align="center" style={{margin:"auto", align:"center", display:"inline-block"}}>Add a Bill</Button>{' '}
     <DropdownButton id="dropdown-basic-button" title="Filter by">
       <Dropdown.Item href="#/action-1">Food & Dining</Dropdown.Item>
       <Dropdown.Item href="#/action-2">utility</Dropdown.Item>
@@ -71,6 +73,8 @@ const Home = () => {
       <Dropdown.Item href="#/action-3">education</Dropdown.Item>
       <Dropdown.Item href="#/action-3">travel</Dropdown.Item>
     </DropdownButton>
+    <Button variant="primary">TimeCycle</Button>
+    </div>
     <Table striped bordered hover style={{ maxWidth:"1000px", textAlign:"center" ,margin:"auto"}}>
         <thead>
             <tr>
@@ -103,6 +107,11 @@ const Home = () => {
 
        </tbody> 
     </Table>
+    <form>
+    <label>Monthly Budget: </label>
+    <input type="text"/>
+    <button type="submit" >find expenses</button>
+    </form>
     </div>
   )
 }
