@@ -1,5 +1,7 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+
 
 const Home = () => {
     const bills = [
@@ -56,7 +58,9 @@ const Home = () => {
         console.log(bills);
   return (
     <>
+
     <h1 align="center" style={{marginTop: "20px"}}>Bills DashBoard</h1>
+    <Button variant="primary" align="center" style={{margin:"auto", align:"center"}}>Add a Bill</Button>{' '}
     <Table striped bordered hover style={{ maxWidth:"1000px", textAlign:"center" ,margin:"auto"}}>
         <thead>
             <tr>
@@ -79,8 +83,8 @@ const Home = () => {
                     <td>{item.category}</td>
                     <td>{item.amount}</td>
                     <td>{item.date}</td>
-                    <td>Delete Button</td>
-                    <td>Edit Button</td>
+                    <td><Button variant="danger">Delete</Button>{' '}</td>
+                    <td><Button variant="success">Success</Button>{' '}</td>
                 </tr>
         
         ))}
