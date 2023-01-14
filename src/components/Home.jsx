@@ -3,8 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+
 
 
 const Home = () => {
@@ -98,13 +97,9 @@ const Home = () => {
                     <td>{item.amount}</td>
                     <td>{item.date}</td>
                     <td><Button variant="danger">Delete</Button>{' '}
-                    <Button variant="success">Edit</Button>{' '}</td>
-                    
+                    <Button variant="success">Edit</Button>{' '}</td>  
                 </tr>
-        
         ))}
-        
-
        </tbody> 
     </Table>
     <form>
