@@ -1,6 +1,8 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
 const Home = () => {
@@ -57,10 +59,18 @@ const Home = () => {
         ];
         console.log(bills);
   return (
-    <>
+    <div style={{margin:"auto", display:"flex", flexDirection:"column", gap:"20px", alignItems:"center", justifyContent:"center"}}>
 
     <h1 align="center" style={{marginTop: "20px"}}>Bills DashBoard</h1>
-    <Button variant="primary" align="center" style={{margin:"auto", align:"center"}}>Add a Bill</Button>{' '}
+    <Button variant="primary" align="center" style={{margin:"auto", align:"center", display:"inline-block"}}>Add a Bill</Button>{' '}
+    <DropdownButton id="dropdown-basic-button" title="Filter by">
+      <Dropdown.Item href="#/action-1">Food & Dining</Dropdown.Item>
+      <Dropdown.Item href="#/action-2">utility</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">shopping</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Personal Care</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">education</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">travel</Dropdown.Item>
+    </DropdownButton>
     <Table striped bordered hover style={{ maxWidth:"1000px", textAlign:"center" ,margin:"auto"}}>
         <thead>
             <tr>
@@ -69,8 +79,8 @@ const Home = () => {
                 <th>Category</th>
                 <th>Amount</th>
                 <th>Date</th>
-                <th>Delete</th>
-                <th>Edit</th>
+                <th>Actions</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -83,8 +93,9 @@ const Home = () => {
                     <td>{item.category}</td>
                     <td>{item.amount}</td>
                     <td>{item.date}</td>
-                    <td><Button variant="danger">Delete</Button>{' '}</td>
-                    <td><Button variant="success">Success</Button>{' '}</td>
+                    <td><Button variant="danger">Delete</Button>{' '}
+                    <Button variant="success">Edit</Button>{' '}</td>
+                    
                 </tr>
         
         ))}
@@ -92,7 +103,7 @@ const Home = () => {
 
        </tbody> 
     </Table>
-    </>
+    </div>
   )
 }
 export default Home;
